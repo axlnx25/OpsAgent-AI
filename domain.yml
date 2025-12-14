@@ -5,29 +5,188 @@ intents:
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
+  - ask_definition
+  - ask_explanation
+  - ask_example
+  - ask_analogy
+  - ask_step_by_step
+  - ask_installation
+  - ask_configuration
+  - ask_pipeline
+  - ask_resources
+  - ask_best_practices
+  - ask_usage
+  - ask_architecture
+  - inform_level
+  - ask_more_details
+  - thanks
+  - fallback
+
+actions:
+  - action_set_level
+  - action_provide_definition
+  - action_provide_explanation
+  - action_provide_example
+  - action_provide_analogy
+  - action_provide_step_by_step
+  - action_install_tool
+  - action_configure_tool
+  - action_explain_usage
+  - action_explain_architecture
+  - action_best_practices
+  - action_recommend_resources
+
 
 responses:
+
+  # -------------------------------
+  #   INTENTS DE DIALOGUE
+  # -------------------------------
   utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
+    - text: "Salut ! Comment puis-je t’aider aujourd’hui dans tes questions DevOps ?"
+    - text: "Bonjour ! Que veux-tu apprendre ou configurer aujourd’hui ?"
+    - text: "Bienvenue ! Je suis prêt à t’aider sur Docker, Kubernetes, CI/CD et plein d’autres sujets."
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "À bientôt ! N’hésite pas si tu veux continuer ton apprentissage DevOps."
+    - text: "Au revoir ! On continue quand tu veux."
+    - text: "Bonne journée !"
+
+  utter_thanks:
+    - text: "Avec plaisir !"
+    - text: "Je suis là pour t’aider, toujours."
+    - text: "Content que ça t’aide !"
+
+  utter_affirm:
+    - text: "Parfait."
+    - text: "Entendu."
+    - text: "Très bien !"
+
+  utter_deny:
+    - text: "D’accord, je comprends."
+    - text: "Pas de souci, on peut clarifier."
+    - text: "Ok, reformulons alors."
+
+  utter_fallback:
+    - text: "Je ne suis pas sûr de comprendre, peux-tu reformuler ?"
+    - text: "Je ne suis pas certain d’avoir bien compris ta question."
+
+  # -------------------------------
+  #   PEDAGOGIE ET GUIDAGE
+  # -------------------------------
+  utter_ask_more_details:
+    - text: >
+        Pour que je puisse t’aider efficacement, peux-tu préciser ta demande ?
+        Parles-tu d’un outil (Docker, Kubernetes, Git…), d’un concept ou d’un pipeline ?
+
+  utter_ask_level:
+    - text: >
+        Avant qu’on continue, peux-tu me dire ton niveau ? 
+        (débutant, intermédiaire, avancé)
+
+  utter_acknowledge_level:
+    - text: "Parfait, j’adapterai mes explications à ton niveau !"
+
+  # -------------------------------
+  #   INTENTS TECHNIQUES GENERIQUES
+  # -------------------------------
+  utter_ask_tool_missing:
+    - text: "D’accord ! Sur quel outil veux-tu que je t’explique cela ?"
+
+  utter_ask_concept_missing:
+    - text: "Très bien. De quel concept DevOps veux-tu une explication ?"
+
+  utter_confirm_usage:
+    - text: >
+        Très bien ! Je vais t’expliquer comment utiliser cet outil.
+        Souhaites-tu une présentation générale ou un exemple concret ?
+
+  utter_confirm_definition:
+    - text: >
+        Parfait ! Je te donne une définition claire et concise.
+        Avant, précise-moi : de quel concept ou outil s’agit-il ?
+
+  utter_confirm_installation:
+    - text: >
+        Ok, je peux te guider pour l’installation. Quel système utilises-tu ?
+        (Linux, Ubuntu, Debian, Windows, macOS…)
+
+  utter_confirm_configuration:
+    - text: >
+        Très bien, je vais t’aider à configurer cet outil.
+        Peux-tu préciser la version ou le contexte d’usage ?
+
+  utter_did_that_help_you:
+    - text: "Cela vous a t il été utile ?"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Je suis un bot alimenté pae Rasa"
+
+
+slots:
+  tool:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: tool
+
+  concept:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: concept
+
+  level:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: level
+
+  task:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        intent: ask_installation
+        value: installation
+      - type: from_intent
+        intent: ask_usage
+        value: usage
+      - type: from_intent
+        intent: ask_configuration
+        value: configuration
+      - type: from_intent
+        intent: ask_definition
+        value: definition
+      - type: from_intent
+        intent: ask_step_by_step
+        value: step_by_step
+      - type: from_intent
+        intent: ask_architecture
+        value: architecture
+      - type: from_intent
+        intent: ask_pipeline
+        value: pipeline
+
+  langage:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: langage
+
+  version:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: version
+
+
 
 session_config:
   session_expiration_time: 60

@@ -2,12 +2,66 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Challenge est tu un bot
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+# -----------------------------------------
+# 1. Comportements de base
+# -----------------------------------------
+
+- rule: Dire bonjour
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Dire au revoir
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Dire merci
+  steps:
+    - intent: thanks
+    - action: utter_thanks
+
+- rule: Confirmer
+  steps:
+    - intent: affirm
+    - action: utter_affirm
+
+- rule: Nier
+  steps:
+    - intent: deny
+    - action: utter_deny
+
+
+# -----------------------------------------
+# 2. Fallback
+# -----------------------------------------
+
+- rule: Fallback NLU
+  steps:
+    - intent: fallback
+    - action: utter_fallback
+
+
+# -----------------------------------------
+# 3. Remplir automatiquement le slot "level"
+# -----------------------------------------
+
+- rule: Extraire le niveau (automatique)
+  steps:
+    - intent: inform_level
+    - action: action_set_level
+
+
+# -----------------------------------------
+# 4. Demander plus de détails
+# -----------------------------------------
+
+- rule: L'utilisateur demande plus de détails
+  steps:
+    - intent: ask_more_details
+    - action: utter_ask_more_details

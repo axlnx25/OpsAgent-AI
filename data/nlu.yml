@@ -3,89 +3,754 @@ version: "3.1"
 nlu:
 - intent: greet
   examples: |
-    - hey
+    - salut
+    - bonjour
     - hello
+    - yoo
+    - coucou
+    - hey
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - salut à toi
+    - bon matin
+    - hey salut
+    - yo mec
+    - saluuut
+    - heyyy
+    - wesh
+    - bien le bonjour
+    - salut le bot
+    - holà
+    - salam
+    - peace
+    - hey, tu vas bien ?
+    - salut, comment ça va ?
+    - hey bot
+    - yo frero
+    - coucou toi
+    - salut
+    - hellooo
+    - bonsoir à toi
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - bonsoir
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
     - bye bye
-    - see you later
+    - à plus
+    - tchao
+    - au revoir
+    - bonne journée
+    - salut, merci
+    - à la prochaine
+    - à bientôt
+    - bonne soirée
+    - je me casse
+    - on se voit plus tard
+    - je dois y aller
+    - ciao
+    - à plus tard
+    - on se reparle plus tard
+    - je te laisse
+    - je file
+    - bonne continuation
+    - peace
+    - ok à plus
+    - merci, à bientôt
+    - je déconnecte
+    - j'y vais
 
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
+    - oui
+    - d'accord
+    - ok
     - correct
+    - exact
+    - tout à fait
+    - bien sûr
+    - évidemment
+    - carrément
+    - ouais
+    - yep
+    - yes
+    - clairement
+    - je confirme
+    - oui oui
+    - ok super
+    - totalement
+    - ça marche
+    - parfait
+    - j'approuve
+    - c'est ça
+    - absolument
+    - logique
+
+- intent: thanks
+  examples: |
+    - merci
+    - merci beaucoup
+    - super, merci
+    - c'est parfait
+    - je te remercie
+    - je suis reconnaissant
+    - merci infiniment
+    - merci pour ton aide
+    - merci pour les infos
+    - merci à toi
+    - top merci
+    - trop cool merci
+    - un grand merci
+    - nickel merci
+    - merci mon ami
+    - merci beaucoup vraiment
+    - merci du soutien
+    - c'était très utile merci
 
 - intent: deny
   examples: |
+    - non
     - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - pas vraiment
+    - nope
+    - pas du tout
+    - je suis pas d'accord
+    - je ne suis pas d'accord
+    - je ne suis pas du meme avis
+    - je ne partage pas ce point de vue
+    - je ne partage pas ton point de vue
+    - négatif
+    - absolument pas
+    - jamais
+    - plutôt non
+    - pas pour moi
+    - je pense pas
+    - ça ne me convient pas
+    - non merci
+    - je refuse
+    - non non
+    - je ne veux pas
+    - je ne préfère pas
 
-- intent: mood_great
+- intent: fallback
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - ...
+    - désolé quelque chose s'est mal passé
+    - je ne suis pas sûr
+    - euh
+    - je comprends pas
+    - quoi ?
+    - hein ?
+    - hmmm
+    - je sais pas trop
+    - j'ai pas compris
+    - c'est flou
+    - pardon ?
+    - qsdksjd
+    - heu je sais pas
+    - aucune idée
+    - ça n'a pas de sens
+    - pffff
+    - hein quoi ?
+    - idk
+    - ????
+    - je suis perdu
+    - je suis confus
+    - je crois que j'ai mal formulé
 
-- intent: mood_unhappy
+- intent: ask_definition
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - qu'est-ce que le [DevOps](concept) ?
+    - c'est quoi [DevOps](concept) ?
+    - donne-moi la définition de [DevOps](concept)
+    - qu'entend-on par [CI/CD](concept) ?
+    - définition claire de [CI/CD](concept)
+    - explique-moi ce qu'est [Kubernetes](tool)
+    - donne une définition simple de [Docker](tool)
+    - peux-tu définir [infrastructure as code](concept) ?
+    - comment définirais-tu [microservices](concept) ?
+    - peux-tu expliquer brièvement [Git](tool) ?
+    - donne la définition de [Terraform](tool)
+    - définition simple de [monitoring](concept)
+    - qu'est-ce que l’[orchestration](concept) ?
+    - explique ce que signifie [immutable infrastructure](concept)
+    - c'est quoi un [pipeline CI/CD](concept) ?
+    - comment définir [service mesh](concept) ?
+    - donne une courte définition pour [Prometheus](tool)
+    - qu'est-ce qu'une image [Docker](tool) ?
+    - qu'entend-on par [observability](concept) ?
+    - qu'est-ce que [GitOps](concept) ?
+    - donne-moi une définition de [Ansible](tool)
+    - explique ce qu'est [Helm](tool)
+    - peux-tu définir [SRE](concept) ?
+    - c'est quoi le rôle d'un [SRE](concept) ?
+    - comment expliquerais-tu [load balancing](concept) ?
+    - qu'est-ce qu'un [reverse proxy](concept) ?
+    - peux-tu me définir [Nginx](tool) ?
+    - c'est quoi [Apache Kafka](tool) ?
+    - qu'entend-on par [scalabilité](concept) ?
+    - peux-tu expliquer le concept de [haute disponibilité](concept) ?
+    - donne-moi la définition de [pipeline](concept)
+    - que signifie [déploiement continu](concept) ?
+    - explique ce qu'est un [cluster Kubernetes](concept)
+    - c'est quoi [container runtime](concept) ?
+    - que veut dire [infrastructure cloud](concept) ?
+    - peux-tu définir [IaaS](concept) ?
+    - peux-tu définir [PaaS](concept) ?
+    - peux-tu définir [SaaS](concept) ?
+    - explique le concept de [virtualisation](concept)
+    - qu'est-ce qu’un [node Kubernetes](concept) ?
+    - définition de [ingress controller](tool)
+    - explique ce que veut dire [auto-scaling](concept)
+    - c’est quoi un [artifact](concept) ?
+    - qu'est-ce qu'un [registry Docker](tool) ?
+    - peux-tu définir [log management](concept) ?
+    - donne une définition pour [Grafana](tool)
+    - comment définir [pipeline GitLab CI](concept)
+    - qu'entend-on par [infrastructure modulaire](concept) ?
+    - peux-tu me définir [Zero Trust](concept) ?
+    - qu'est-ce que le [blue-green deployment](concept) ?
+
+
+- intent: ask_explanation
+  examples: |
+    - peux-tu m'expliquer [Docker](tool) ?
+    - j'aimerais une explication claire de [Kubernetes](tool)
+    - explique-moi comment fonctionne [Git](tool)
+    - je veux comprendre le concept de [pipeline CI/CD](concept)
+    - donne-moi une explication simple sur les [microservices](concept)
+    - comment fonctionne l'[orchestration](concept) dans Kubernetes ?
+    - explique de manière détaillée [infrastructure as code](concept)
+    - j'ai besoin d'une explication sur [Ansible](tool)
+    - peux-tu clarifier ce que signifie [monitoring](concept) ?
+    - explique-moi le rôle de [Jenkins](tool) dans un pipeline
+    - comment marche exactement [GitOps](concept) ?
+    - peux-tu expliquer le principe de [conteneurisation](concept) ?
+    - je souhaite une explication approfondie de [Terraform](tool)
+    - comment fonctionne un [service mesh](concept) comme Istio ?
+    - explique-moi pourquoi on utilise [CI/CD](concept)
+    - j'ai besoin de comprendre l'idée des [microservices](concept)
+    - peux-tu expliquer comment fonctionne un cluster [Kubernetes](tool) ?
+    - donne-moi une explication pédagogique de [DevOps](concept)
+    - qu'est-ce que cela veut dire quand on parle d'[observabilité](concept) ?
+    - j'aimerais comprendre comment fonctionne un [registre Docker](tool)
+
+- intent: ask_example
+  examples: |
+    - donne-moi un exemple d’utilisation de [Docker](tool)
+    - peux-tu me montrer un exemple de pipeline [CI/CD](concept) ?
+    - j’aimerais un exemple simple de fichier [Dockerfile](tool)
+    - peux-tu donner un exemple en [python](langage) pour utiliser une API ?
+    - montre-moi un exemple en [java](langage) pour un microservice
+    - je veux un exemple concret de déploiement avec [Kubernetes](tool)
+    - peux-tu me donner un exemple d’infrastructure avec [Terraform](tool) ?
+    - donne un exemple d’architecture en [microservices](concept)
+    - montre-moi un exemple pratique de [GitOps](concept)
+    - peux-tu donner un exemple d’utilisation de [Ansible](tool) ?
+    - j’aimerais un exemple de configuration avec [Prometheus](tool)
+    - donne un exemple simple de build CI avec [Jenkins](tool)
+    - peux-tu me montrer un exemple en [python](langage) d’un test automatisé ?
+    - j’aimerais un exemple très simple de [pipeline CI/CD](concept)
+    - donne un exemple d’utilisation de [Git](tool) pour versionner un projet
+    - peux-tu donner un exemple d’un service en [microservices](concept) ?
+    - montre un exemple de dashboard [Grafana](tool)
+    - donne-moi un exemple concret d’observabilité avec [ELK](tool)
+    - peux-tu fournir un exemple de déploiement blue/green ?
+    - j’aimerais un exemple de script [bash](langage) pour automatiser une tâche
+
+- intent: ask_analogy
+  examples: |
+    - Donne-moi une analogie pour expliquer les [microservices](concept)
+    - Peux-tu comparer le [CI/CD](concept) à quelque chose de simple ?
+    - Une analogie pour comprendre les conteneurs [Docker](tool)
+    - Explique [Kubernetes](tool) avec une métaphore
+    - Compare une architecture monolithique et les [microservices](concept) avec une image simple
+    - Explique l’orchestration comme si tu expliquais l’organisation d’une cuisine
+    - Donne une analogie pour comprendre le load balancing
+    - Comment expliquer un pipeline [CI/CD](concept) à un débutant avec une analogie ?
+    - Compare le déploiement continu à une chaîne de montage d’usine
+    - Donne une métaphore pour le concept d’[observability](concept)
+    - Peux-tu faire une analogie entre [Git](tool) et un historien qui garde toutes les versions ?
+    - Explique l’Infrastructure as Code comme si tu parlais de plans d’architecte
+    - Donne une analogie pour comprendre les service mesh comme [Istio](tool)
+    - Compare les conteneurs à des boîtes organisées dans un entrepôt
+    - Explique la différence entre build et deploy avec une métaphore simple
+    - Donne une analogie pour comprendre la différence entre monitoring et logging
+    - Explique la gestion des secrets avec [Vault](tool) comme si c’était un coffre-fort numérique
+    - Donne une analogie simple pour expliquer un rollback
+    - Compare les tests automatisés à un contrôle qualité d’une ligne de production
+    - Explique [GitOps](concept) avec une métaphore facile pour les débutants
+
+- intent: ask_step_by_step
+  examples: |
+    - Explique-moi pas à pas comment créer un [Dockerfile](tool)
+    - Guide étape par étape pour déployer une app [python](langage) sur [Kubernetes](tool)
+    - Tutoriel pas à pas pour mettre en place un pipeline [CI/CD](concept)
+    - Comment installer [Docker](tool) sur Ubuntu, étape par étape ?
+    - Quelles sont les étapes pour configurer [Jenkins](tool) pour un projet [java](langage) ?
+    - Guide étape par étape pour initialiser un repo [Git](tool) et faire le premier push
+    - Tutoriel progressif pour déployer une API en [python](langage)
+    - Explique pas à pas comment utiliser [Terraform](tool) pour provisionner une VM
+    - Étapes détaillées pour configurer le monitoring avec [Prometheus](tool)
+    - Guide pas à pas pour créer un service en [java](langage) et le conteneuriser avec [Docker](tool)
+    - Comment mettre en place un déploiement blue/green, étape par étape ?
+    - Tutoriel pas à pas pour configurer un registry [Docker](tool) privé
+    - Étapes pour appliquer [GitOps](concept) avec un repo [Git](tool) et [Kubernetes](tool)
+    - Guide étape par étape pour écrire un playbook [Ansible](tool) basique et l’exécuter
+    - Explique pas à pas la création d’un pipeline avec [GitHub Actions](tool)
+    - Quelles sont les étapes pour configurer l’alerting (Prometheus → Alertmanager → notification) ?
+    - Tutoriel progressif pour automatiser les tests unitaires en [python](langage)
+    - Guide étape par étape pour sécuriser des secrets avec [Vault](tool)
+    - Explique comment déployer une application en [microservices](concept) sur [Kubernetes](tool) en étapes concrètes
+    - Pas à pas : comment faire un rollback d’un déploiement dans [Kubernetes](tool) ?
+
+- intent: ask_installation
+  examples: |
+    - comment installer [Docker](tool) ?
+    - comment installer [Kubernetes](tool) sur Ubuntu ?
+    - installation de [Git](tool), comment faire ?
+    - peux-tu m’expliquer comment installer [Jenkins](tool) ?
+    - procédure d’installation de [Terraform](tool)
+    - tutoriel pour installer [Ansible](tool)
+    - comment installer [Prometheus](tool) étape par étape ?
+    - comment mettre en place [Grafana](tool) ?
+    - installation de [GitLab](tool), tu peux m’aider ?
+    - comment installer [Maven](tool) pour un projet Java ?
+    - comment installer [Python](langage) dernière version ?
+    - installation de [Java](langage) sur Linux, comment faire ?
+    - comment installer le client [kubectl](tool) ?
+    - aide-moi à installer [Helm](tool)
+    - installation de [Docker Compose](tool)
+    - quelle est la commande pour installer [Node.js](tool) ?
+    - comment installer [OpenShift CLI](tool) ?
+    - installation du plugin Kubernetes pour [Jenkins](tool)
+    - comment installer un cluster local avec [Minikube](tool) ?
+    - installation pas à pas de [Vault](tool)
+
+- intent: ask_configuration
+  examples: |
+    - comment configurer [Docker](tool) après installation ?
+    - aide-moi à configurer [Jenkins](tool)
+    - comment configurer un cluster [Kubernetes](tool) ?
+    - configuration de [Git](tool) pour un nouveau projet
+    - comment configurer la connexion à un registry [Docker](tool) ?
+    - configure [Terraform](tool) pour AWS, comment faire ?
+    - comment configurer un pipeline dans [GitLab CI](tool) ?
+    - configuration de [Prometheus](tool) pour monitorer une app
+    - comment configurer un dashboard [Grafana](tool) ?
+    - comment configurer un playbook [Ansible](tool) ?
+    - aide-moi à configurer le fichier ~/.gitconfig
+    - comment configurer le fichier kubeconfig ?
+    - configuration de l’authentification dans [Vault](tool)
+    - comment configurer les secrets dans [Kubernetes](tool) ?
+    - comment configurer l’intégration GitHub dans [Jenkins](tool) ?
+    - configuration d’un runner pour [GitLab CI](tool)
+    - comment configurer les alertes dans [Prometheus](tool) ?
+    - aide-moi à configurer [Docker Compose](tool)
+    - comment configurer l’autoscaling dans [Kubernetes](tool) ?
+    - configuration de service mesh avec [Istio](tool)
+    - Peux-tu m’expliquer comment configurer correctement [Kubernetes](tool) pour un cluster de tests ?
+    - Comment configurer les variables d’environnement pour [Docker](tool) ?
+    - Quelle est la procédure pour configurer un agent dans [Jenkins](tool) ?
+    - Comment configurer un workspace dans [Terraform](tool) ?
+    - Aide-moi à configurer un webhook dans [GitLab CI](tool)
+    - Comment configurer les dashboards d’alerting dans [Grafana](tool) ?
+    - J’aimerais configurer le provisioning automatique dans [Ansible](tool), comment faire ?
+    - Comment configurer le fichier de configuration principal de [Prometheus](tool) ?
+    - Peux-tu montrer comment configurer un service dans [Kubernetes](tool) ?
+    - Comment configurer une Politique RBAC dans [Kubernetes](tool) ?
+    - Quel fichier dois-je modifier pour configurer [Docker Compose](tool) ?
+    - Comment configurer un configMap dans [Kubernetes](tool) ?
+    - Montre-moi comment configurer un pipeline multibranches dans [Jenkins](tool)
+    - J’ai besoin de configurer le stockage persistant dans [Kubernetes](tool), comment faire ?
+    - Comment configurer un réseau overlay dans [Docker](tool) ?
+    - Peux-tu expliquer comment configurer les credentials dans [Vault](tool) ?
+    - Comment configurer un ingress controller dans [Kubernetes](tool) ?
+    - Montre-moi comment configurer les runners auto-scalés pour [GitLab CI](tool)
+    - Comment configurer une intégration SSO dans [Grafana](tool) ?
+    - Quelle est la configuration recommandée pour un fichier docker-compose.yml ?
+    - Comment configurer un fichier de build dans [Jenkins](tool) ?
+    - Peux-tu m’aider à configurer un nouveau job dans [GitLab CI](tool) ?
+    - Comment configurer un exporter supplémentaire pour [Prometheus](tool) ?
+    - J’aimerais configurer un cluster HA dans [Kubernetes](tool), comment procéder ?
+    - Quelle configuration faut-il pour connecter [Terraform](tool) à Azure ?
+    - Comment configurer un environnement staging avec [Docker Compose](tool) ?
+    - Comment configurer le load balancing natif dans [Kubernetes](tool) ?
+    - Aide-moi à configurer les logs centralisés dans [Grafana](tool) avec Loki
+    - Comment configurer les plugins essentiels dans [Jenkins](tool) ?
+    - Peux-tu m’expliquer comment configurer une authentification Git dans [Git](tool) ?
+
+
+- intent: ask_pipeline
+  examples: |
+    - Comment intégrer [Jenkins](tool) dans un pipeline CI/CD ?
+    - Peux-tu m’expliquer comment [GitLab CI](tool) s’utilise dans un pipeline DevOps ?
+    - Comment créer une pipeline avec [GitHub Actions](tool) ?
+    - Comment cet outil s’insère dans les différentes étapes du pipeline ?
+    - Quelle est la manière d’utiliser [Docker](tool) dans une pipeline DevOps ?
+    - Comment configurer [Azure DevOps](tool) pour exécuter des étapes de build ?
+    - Comment intégrer cet outil dans un pipeline de livraison continue ?
+    - Quels rôles [Terraform](tool) peut jouer dans un pipeline ?
+    - Comment déclencher des jobs pipeline avec [ArgoCD](tool) ?
+    - Comment automatiser le déploiement avec cet outil dans la pipeline ?
+    - Comment enchaîner les étapes CI/CD à l’aide de [CircleCI](tool) ?
+    - Comment cet outil gère-t-il les phases du pipeline DevOps ?
+    - Peux-tu me montrer comment structurer une pipeline utilisant [Kubernetes](tool) ?
+    - Comment définir un pipeline multi-stages avec cet outil ?
+    - Comment cet outil s’intègre à un système de build existant ?
+    - Comment déclencher automatiquement une pipeline avec [Jenkins](tool) ?
+    - De quelle manière orchestrer un pipeline CI/CD avec cet outil ?
+    - Comment définir des étapes CI/CD pour [Maven](tool) dans la pipeline ?
+    - Comment utiliser cet outil pour la livraison continue ?
+    - Comment superviser les étapes du pipeline DevOps avec [Prometheus](tool) ?
+    - Comment mettre en place une pipeline CI/CD complète avec [GitLab CI](tool) ?
+    - Peux-tu m’expliquer comment construire une pipeline basée sur [Docker](tool) ?
+    - Comment ce service peut-il automatiser les étapes de build dans une pipeline ?
+    - Comment intégrer des tests automatisés dans un pipeline utilisant [Jenkins](tool) ?
+    - Quelle est la meilleure façon de gérer les artefacts dans un pipeline CI/CD ?
+    - Comment créer un pipeline de déploiement continu avec [ArgoCD](tool) ?
+    - Peux-tu montrer comment connecter [GitHub Actions](tool) à un cluster [Kubernetes](tool) ?
+    - Comment mettre en place un pipeline GitOps avec [FluxCD](tool) ?
+    - Comment exécuter des scans de sécurité dans un pipeline CI/CD ?
+    - Comment utiliser [SonarQube](tool) dans un pipeline d'analyse continue ?
+    - Explique-moi comment orchestrer une pipeline multi-environnements (dev → staging → prod)
+    - Comment créer une pipeline qui compile un projet [Java](langage) et le conteneurise ?
+    - Comment insérer l’étape de tests unitaires [Python](langage) dans une pipeline ?
+    - Comment déployer automatiquement sur un cluster via une pipeline CI/CD ?
+    - Comment définir un workflow CI/CD pour une application microservices ?
+    - Comment exécuter une pipeline conditionnelle selon le type de commit ?
+    - Comment valider la qualité du code dans la pipeline avec [SonarQube](tool) ?
+    - Comment gérer les secrets dans une pipeline utilisant [Vault](tool) ?
+    - Comment surveiller l’état d’une pipeline CI/CD avec [Grafana](tool) ?
+    - Comment optimiser les performances d’une pipeline utilisant des conteneurs ?
+
+- intent: ask_resources
+  examples: |
+      - Peux-tu me donner des ressources pour apprendre [Docker](tool) ?
+      - Où trouver la documentation officielle de [Kubernetes](tool) ?
+      - Quels tutoriels recommandes-tu pour commencer avec [GitLab CI](tool) ?
+      - Connais-tu des cours en ligne pour maîtriser cet outil ?
+      - Quels ouvrages permettent d’approfondir le concept de [CI/CD](concept) ?
+      - As-tu des liens utiles pour étudier [Terraform](tool) ?
+      - Quels sites proposent de bonnes explications sur cet outil ?
+      - Peux-tu fournir des ressources officielles pour [Prometheus](tool) ?
+      - Où trouver des exemples pratiques pour apprendre [Ansible](tool) ?
+      - Quelles vidéos expliquent bien comment utiliser cet outil ?
+      - As-tu des ressources gratuites pour apprendre [Jenkins](tool) ?
+      - Quels blogs techniques parlent de [Kubernetes](tool) ?
+      - Où télécharger la documentation de référence sur [Docker](tool) ?
+      - Quels tutoriels pas-à-pas recommandes-tu pour cet outil ?
+      - Donne-moi des ressources fiables pour devenir expert DevOps.
+      - Quels parcours d’apprentissage existent pour [GitHub Actions](tool) ?
+      - Quels supports pour progresser avec cet outil ?
+      - Où trouver un guide de démarrage rapide de [Vault](tool) ?
+      - Quels livres expliquent en profondeur le concept de [microservices](concept) ?
+      - Existe-t-il une documentation open-source pour apprendre cet outil ?
+
+- intent: ask_best_practices
+  examples: |
+      - Quelles sont les meilleures pratiques pour utiliser [Docker](tool) ?
+      - Peux-tu me donner les bonnes pratiques pour [Kubernetes](tool) ?
+      - Quels standards recommande-t-on pour bien utiliser cet outil ?
+      - Comment optimiser son utilisation selon les bonnes pratiques DevOps ?
+      - Quelles bonnes pratiques de sécurité s’appliquent à [Terraform](tool) ?
+      - Comment améliorer la qualité en appliquant les bonnes pratiques CI/CD ?
+      - Quelles conventions adopter pour utiliser cet outil efficacement ?
+      - Peux-tu lister les pratiques recommandées par les experts DevOps ?
+      - Quelles erreurs éviter lorsque l’on utilise [Ansible](tool) ?
+      - Quelles bonnes pratiques suivre pour configurer correctement cet outil ?
+      - Comment garantir que l’usage de cet outil respecte les standards ?
+      - Quelles guidelines DevOps s’appliquent à [GitLab](tool) ?
+      - Quelles règles suivre pour garantir une utilisation efficace ?
+      - Quelles bonnes pratiques permettent de sécuriser l’utilisation de cet outil ?
+      - Comment suivre les best practices pour maintenir [Jenkins](tool) ?
+      - Quelles recommandations pour un usage optimal de cet outil ?
+      - Quelles pratiques pour tirer le maximum de [Docker Compose](tool) ?
+      - Quelles normes appliquer pour cet outil DevOps ?
+      - Quelles bonnes pratiques techniques pour [Helm](tool) ?
+      - Donne-moi les recommandations pour utiliser [Vault](tool) correctement.
+
+
+- intent: ask_usage
+  examples: |
+    - Comment utiliser [Docker](tool) pour créer des conteneurs ?
+    - Peux-tu m’expliquer comment utiliser [Kubernetes](tool) pour déployer une application ?
+    - Comment se sert-on de [Git](tool) dans un projet collaboratif ?
+    - Comment utiliser [Jenkins](tool) pour automatiser les builds ?
+    - Montre-moi comment utiliser [Terraform](tool) pour provisionner une infrastructure.
+    - Peux-tu expliquer comment utiliser [Ansible](tool) pour configurer un serveur ?
+    - Comment se servir de [Prometheus](tool) pour monitorer une application ?
+    - Comment utiliser [Grafana](tool) pour visualiser des métriques ?
+    - Montre-moi comment utiliser [GitLab CI](tool) pour créer un pipeline.
+    - Peux-tu expliquer comment utiliser [ArgoCD](tool) pour déployer automatiquement ?
+    - Comment utiliser [Helm](tool) pour gérer des charts Kubernetes ?
+    - Comment se servir de [Docker Compose](tool) pour orchestrer des conteneurs localement ?
+    - Montre-moi comment utiliser [Vault](tool) pour gérer des secrets.
+    - Peux-tu expliquer comment utiliser [CircleCI](tool) pour CI/CD ?
+    - Comment utiliser [Node.js](langage) avec [Docker](tool) pour déployer une app ?
+    - Comment utiliser [Python](langage) pour interagir avec [Kubernetes](tool) ?
+    - Comment utiliser [GitOps](concept) dans un workflow DevOps ?
+    - Peux-tu montrer comment utiliser un [pipeline CI/CD](concept) dans la pratique ?
+    - Comment utiliser [microservices](concept) pour concevoir une architecture scalable ?
+    - Montre-moi comment utiliser un [service mesh](concept) pour gérer les communications inter-services.
+    - Comment utiliser [Nginx](tool) comme reverse proxy ?
+    - Peux-tu m’expliquer comment utiliser [Apache Kafka](tool) pour gérer des messages ?
+    - Comment utiliser [Istio](tool) dans un cluster Kubernetes ?
+    - Comment se servir de [Argo Workflows](tool) pour automatiser des tâches ?
+    - Montre-moi comment utiliser [FluxCD](tool) pour faire du GitOps.
+    - Comment utiliser [Kustomize](tool) pour gérer des manifests Kubernetes ?
+    - Peux-tu expliquer comment utiliser [Minikube](tool) pour tester Kubernetes en local ?
+    - Comment utiliser [Kind](tool) pour créer un cluster Kubernetes local ?
+    - Comment se servir de [OpenTelemetry](tool) pour collecter des traces ?
+    - Montre-moi comment utiliser [Loki](tool) pour centraliser les logs.
+    - Comment utiliser [Jaeger](tool) pour le tracing distribué ?
+    - Peux-tu expliquer comment utiliser [SonarQube](tool) pour analyser la qualité du code ?
+    - Comment utiliser [Harbor](tool) comme registry d’images Docker ?
+    - Comment utiliser [AWS](cloud) pour déployer une application serverless ?
+    - Peux-tu expliquer comment utiliser [Azure DevOps](cloud) pour CI/CD ?
+    - Comment utiliser [GCP](cloud) pour héberger des conteneurs ?
+    - Comment se servir de [SSH](protocol) pour accéder à un serveur distant ?
+    - Comment utiliser [SSL/TLS](protocol) pour sécuriser une application ?
+    - Peux-tu me montrer comment utiliser [Load Balancing](concept) dans le cloud ?
+    - Comment utiliser [Auto-scaling](concept) pour adapter les ressources automatiquement ?
+    - Comment utiliser [Infrastructure as Code](concept) dans un pipeline ?
+    - Comment se servir de [Blue-Green deployment](concept) pour éviter les interruptions ?
+    - Comment utiliser [Canary releases](concept) dans Kubernetes ?
+    - Montre-moi comment utiliser [RBAC](concept) dans Kubernetes.
+    - Peux-tu expliquer comment utiliser [Secrets Kubernetes](concept) correctement ?
+    - Comment utiliser [ConfigMap](concept) pour gérer la configuration ?
+    - Comment utiliser [Logging](concept) pour diagnostiquer un problème ?
+    - Comment se servir de [Monitoring](concept) dans un environnement cloud ?
+    - Comment utiliser [Observability](concept) pour comprendre les performances ?
+    - Peux-tu me montrer comment utiliser [CI/CD](concept) pour automatiser les tests ?
+    - Comment utiliser [Versioning Git](concept) correctement ?
+    - Comment utiliser [Branches Git](concept) dans un workflow professionnel ?
+    - Comment utiliser [Merge Requests](concept) dans GitLab ?
+    - Montre-moi comment utiliser [Webhooks](concept) pour déclencher des pipelines.
+    - Comment utiliser [API REST](concept) pour connecter deux services ?
+    - Peux-tu expliquer comment utiliser [microservices](concept) avec un service mesh ?
+    - Comment utiliser [containers](concept) dans un environnement cloud ?
+
+
+- intent: ask_architecture
+  examples: |
+    - Peux-tu m’expliquer l’architecture des [microservices](concept) avec un exemple en [java](langage) ?
+    - Comment concevoir une architecture en [microservices](concept) avec [python](langage) ?
+    - Montre-moi un exemple d’architecture avec des [conteneurs](concept) en [java](langage)
+    - Peux-tu expliquer l’orchestration avec [Kubernetes](tool) et donner un exemple en [python](langage) ?
+    - Comment organiser un système de [microservices](concept) en [java](langage) ?
+    - Montre-moi un exemple d’architecture [Docker](tool) avec code en [python](langage)
+    - Peux-tu expliquer comment orchestrer plusieurs [conteneurs](concept) avec [Kubernetes](tool) ?
+    - Donne un exemple concret d’architecture [microservices](concept) en [java](langage)
+    - Comment structurer une application [python](langage) avec des [microservices](concept) ?
+    - Peux-tu montrer comment déployer des [conteneurs](concept) dans une architecture [Kubernetes](tool) ?
+    - Explique l’architecture d’un [service mesh](concept) et un exemple en [java](langage)
+    - Montre-moi comment organiser des [microservices](concept) avec [python](langage)
+    - Peux-tu expliquer la séparation des services dans une architecture [microservices](concept) ?
+    - Comment orchestrer des [conteneurs](concept) et montrer un exemple en [java](langage) ?
+    - Donne un exemple de communication entre [microservices](concept) avec [python](langage)
+    - Peux-tu montrer comment déployer un cluster [Kubernetes](tool) pour une architecture [microservices](concept) ?
+    - Comment structurer un projet [java](langage) utilisant des [microservices](concept) et des [conteneurs](concept) ?
+    - Montre-moi un exemple d’architecture complète avec [Docker](tool) et [python](langage)
+    - Peux-tu expliquer les bonnes pratiques pour l’architecture [microservices](concept) ?
+    - Comment concevoir une application [python](langage) avec orchestration de [conteneurs](concept) ?
+    - Explique-moi l’architecture d’une application basée sur des [microservices](concept) en [java](langage)
+    - Comment mettre en place une architecture orientée événements dans un système de [microservices](concept) ?
+    - Peux-tu détailler une architecture hexagonale en [python](langage) dans un contexte microservices ?
+    - Comment intégrer un [service mesh](concept) dans une architecture orchestrée par [Kubernetes](tool) ?
+    - Donne-moi un schéma logique d’une architecture [microservices](concept) avec communication asynchrone
+    - Comment concevoir une architecture scalable reposant sur des [conteneurs](concept) ?
+    - Peux-tu expliquer comment gérer la découverte de services dans une architecture [microservices](concept) ?
+    - Comment utiliser [Docker](tool) pour structurer une architecture multi-services en [java](langage) ?
+    - Donne un exemple de pattern API Gateway dans une architecture [microservices](concept)
+    - Peux-tu montrer comment organiser les répertoires d’un projet [python](langage) en microservices ?
+    - Comment modéliser la communication entre services grâce à un message broker dans une architecture [microservices](concept) ?
+    - Donne un exemple d’architecture orientée conteneurs avec [Docker](tool) et [Kubernetes](tool)
+    - Peux-tu expliquer comment gérer la tolérance aux pannes dans une architecture [microservices](concept) ?
+    - Comment décrire une architecture de déploiement Canary avec [Kubernetes](tool) ?
+    - Donne un exemple d’architecture CI/CD intégrée à un système basé sur des [microservices](concept)
+    - Comment structurer une API en [java](langage) dans une architecture orientée services ?
+    - Peux-tu donner un exemple de pipeline qui déploie une architecture [microservices](concept) sur [Kubernetes](tool) ?
+    - Comment établir la communication interne dans une architecture de [conteneurs](concept) ?
+    - Montre-moi comment combiner [Docker](tool) avec un service mesh pour une architecture avancée
+    - Comment organiser un système distribué basé sur [microservices](concept) avec persistance séparée ?
+
+- intent: inform_level
+  examples: |
+    - Je suis un [débutant](level) en DevOps
+    - Mon niveau est [intermédiaire](level)
+    - Je suis plutôt [avancé](level) sur ces concepts
+    - Je me considère [expert](level) en DevOps
+    - Je débute totalement dans [DevOps](concept)
+    - J’ai un niveau [débutant](level)
+    - Je suis [intermédiaire](level) avec [Docker](tool) et [Kubernetes](tool)
+    - Mon expérience est [avancée](level)
+    - Je suis un [expert](level) en pipelines CI/CD
+    - Je connais les bases, je suis [débutant](level)
+    - Je maîtrise assez, je suis [intermédiaire](level)
+    - Je travaille depuis plusieurs années, donc je suis [avancé](level)
+    - J’ai une expérience approfondie, je suis [expert](level)
+    - Je suis encore un [débutant](level) sur [Terraform](tool)
+    - Je suis [intermédiaire](level) en orchestration de [conteneurs](concept)
+    - Mon niveau avec [microservices](concept) est [avancé](level)
+    - Je suis [expert](level) en gestion des pipelines [CI/CD](concept)
+    - Je commence juste, donc je suis [débutant](level)
+    - Je connais un peu, je dirais [intermédiaire](level)
+    - Je maîtrise bien, je suis [avancé](level)
+
+- intent: ask_more_details
+  examples: |
+    - Peux-tu m’en dire plus sur [Docker](tool) ?
+    - J’aimerais avoir plus de détails sur [Kubernetes](tool)
+    - Explique davantage le concept de [microservices](concept)
+    - Donne-moi plus de précisions sur [CI/CD](concept)
+    - Peux-tu détailler comment utiliser [Jenkins](tool) ?
+    - J’aimerais plus d’informations sur [Terraform](tool)
+    - Peux-tu m’expliquer plus en profondeur [Ansible](tool) ?
+    - Donne plus de détails sur l’orchestration avec [Kubernetes](tool)
+    - Peux-tu approfondir le concept de [service mesh](concept) ?
+    - J’aimerais plus de précisions sur les [conteneurs](concept)
+    - Peux-tu expliquer davantage l’usage de [Prometheus](tool) ?
+    - Donne-moi plus d’exemples concrets sur [GitOps](concept)
+    - Peux-tu détailler comment déployer avec [Helm](tool) ?
+    - J’aimerais plus d’explications sur [microservices](concept) en [java](langage)
+    - Peux-tu m’en dire plus sur [Docker Compose](tool) ?
+    - Donne plus de détails sur la gestion des secrets avec [Vault](tool)
+    - Peux-tu expliquer davantage le pipeline [CI/CD](concept) ?
+    - J’aimerais plus de précisions sur [Grafana](tool)
+    - Peux-tu approfondir l’utilisation de [Python](langage) pour [Kubernetes](tool) ?
+    - Donne-moi plus de détails sur les bonnes pratiques avec [GitLab CI](tool)
+
+    
+
+- lookup: tool
+  examples : | 
+    - Git
+    - GitHub
+    - GitLab
+    - Bitbucket
+    - Azure DevOps Repos
+    - Jenkins
+    - GitHub Actions
+    - GitHub Actions
+    - GitLab CI
+    - CircleCI
+    - Travis CI
+    - Bamboo
+    - Azure Pipelines
+    - TeamCity
+    - Intégration Continue
+    - Déploiement Continu
+    - Docker
+    - Podman
+    - Buildah
+    - Kaniko
+    - Harbor
+    - Docker Compose
+    - Kubernetes
+    - OpenShift
+    - Amazon EKS
+    - Google GKE
+    - Azure AKS
+    - Nomad
+    - Terraform
+    - Ansible
+    - Chef
+    - Puppet
+    - SaltStack
+    - Pulumi
+    - CloudFormation
+    - Prometheus
+    - Grafana
+    - ELK Stack
+    - Elasticsearch
+    - Logstash
+    - Kibana
+    - Loki
+    - Datadog
+    - New Relic
+    - Zabbix
+    - Nagios
+    - containerd
+    - CRI-O
+    - Istio
+    - Linkerd
+    - Traefik
+    - SonarQube
+    - Snyk
+    - Trivy
+    - Vault
+    - Falco
+
+- lookup: concept
+  examples: |
+    - DevOps
+    - Culture CI/CD
+    - Shift Left
+    - Feedback loop
+    - Collaboration Dev–Ops
+    - Valeur métier continue
+    - Culture d'amélioration continue
+    - Pipeline CI/CD
+    - Build automation
+    - Test automation
+    - Deployment automation
+    - Delivery pipeline
+    - Release management
+    - Conteneurisation
+    - Microservices
+    - Orchestration
+    - Cloud Native
+    - Service Mesh
+    - Déploiement Blue-Green
+    - Déploiement Canary
+    - Infrastructure as Code (IaC)
+    - Immutable Infrastructure
+    - Provisioning
+    - Configuration Management
+    - GitOps
+    - Everything-as-Code
+    - DevSecOps
+    - Security scanning
+    - Compliance automation
+    - Secret management
+    - Policy as Code
+    - Monitoring
+    - Logging
+    - Alerting
+    - Tracing
+    - SLO
+    - Service Level Objective
+    - SLA
+    - SLI
+    - Service Level Indicator
+    - Scalabilité horizontale
+    - Scalabilité verticale
+    - Haute disponibilité
+    - Résilience
+    - Tollérance aux pannes
+    - Load balancing
+    - Agile
+    - Scrum
+    - Kanban
+    - Lean
+    - Continuous Learning
+    - Post-mortem
+    - RCA
+    - Root Cause Analysis
+
+- lookup: language
+  examples: |
+    - python
+    - java
+
 
 - intent: bot_challenge
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - es-tu un robot ?
+    - es-tu un humain ?
+    - suis-je en train de parler à un bot ?
+    - est-ce que je parle à une personne réelle ?
+    - qui suis-je en train de parler ?
+    - êtes-vous un assistant virtuel ?
+    - tu es un robot ou une personne ?
+    - est-ce un vrai humain qui me répond ?

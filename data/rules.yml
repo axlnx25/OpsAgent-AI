@@ -2,14 +2,9 @@ version: "3.1"
 
 rules:
 
-- rule: Challenge est tu un bot
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-# -----------------------------------------
-# 1. Comportements de base
-# -----------------------------------------
+# -------------------------
+# Dialogue social
+# -------------------------
 
 - rule: Dire bonjour
   steps:
@@ -26,27 +21,76 @@ rules:
     - intent: thanks
     - action: utter_thanks
 
+# -------------------------
+# Fallback
+# -------------------------
 
-# -----------------------------------------
-# 2. Fallback
-# -----------------------------------------
-
-
-# -----------------------------------------
-# 3. Remplir automatiquement le slot "level"
-# -----------------------------------------
-
-- rule: Extraire le niveau (automatique)
+- rule: Fallback NLU
   steps:
-    - intent: inform_level
-    - action: action_set_level
+    - intent: fallback
+    - action: utter_fallback
 
+# -------------------------
+# Ressources (direct)
+# -------------------------
 
-# -----------------------------------------
-# 4. Demander plus de détails
-# -----------------------------------------
-
-- rule: L'utilisateur demande plus de détails
+- rule: Demander des ressources
   steps:
-    - intent: ask_more_details
-    - action: utter_ask_more_details
+    - intent: ask_resources
+    - action: action_recommend_resources
+
+# -------------------------
+# Demande niveau (UNE rule par intent)
+# -------------------------
+
+- rule: Niveau pour définition
+  steps:
+    - intent: ask_definition
+    - action: action_provide_definition
+
+- rule: Niveau pour explication
+  steps:
+    - intent: ask_explanation
+    - action: action_provide_explanation
+
+#- rule: Niveau pour exemple
+#  steps:
+#    - intent: ask_example
+#    - action: action_provide_example
+
+- rule: Niveau pour usage
+  steps:
+    - intent: ask_usage
+    - action: action_explain_usage
+
+- rule: Niveau pour installation
+  steps:
+    - intent: ask_installation
+    - action: action_install_tool
+
+- rule: Niveau pour architecture
+  steps:
+    - intent: ask_architecture
+    - action: action_explain_architecture
+
+# -------------------------
+# Reprise après niveau (CRITIQUE)
+# -------------------------
+
+#- rule: Reprise après niveau
+#  condition:
+#    - slot_was_set:
+#        - pending_intent
+#  steps:
+#    - intent: inform_level
+#    - action: action_set_level
+#    - action: action_resume_pending
+
+#- rule: Reprise après niveau (affirm)
+#  condition:
+#    - slot_was_set:
+#        - pending_intent
+#  steps:
+#    - intent: affirm
+#    - action: action_set_level
+#    - action: action_resume_pending

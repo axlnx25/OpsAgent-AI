@@ -91,27 +91,4 @@ stories:
     - action: utter_ask_more_details
 
 # --- Dialogue de base ---
-- story: salutation
-  steps:
-    - intent: greet
-    - action: utter_greet
 
-- story: remerciement
-  steps:
-    - intent: thanks
-    - action: utter_thanks
-
-- story: au revoir
-  steps:
-    - intent: goodbye
-    - action: utter_goodbye
-
-- story: rejet
-  steps:
-    - intent: deny
-    - action: utter_deny
-
-- story: acceptation
-  steps:
-    - intent: affirm
-    - action: utter_affirm

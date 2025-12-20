@@ -26,25 +26,10 @@ rules:
     - intent: thanks
     - action: utter_thanks
 
-- rule: Confirmer
-  steps:
-    - intent: affirm
-    - action: utter_affirm
-
-- rule: Nier
-  steps:
-    - intent: deny
-    - action: utter_deny
-
 
 # -----------------------------------------
 # 2. Fallback
 # -----------------------------------------
-
-- rule: Fallback NLU
-  steps:
-    - intent: fallback
-    - action: utter_fallback
 
 
 # -----------------------------------------

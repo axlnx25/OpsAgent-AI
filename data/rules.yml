@@ -2,14 +2,9 @@ version: "3.1"
 
 rules:
 
-- rule: Challenge est tu un bot
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
-
-# -----------------------------------------
-# 1. Comportements de base
-# -----------------------------------------
+# -------------------------
+# Dialogue social
+# -------------------------
 
 - rule: Dire bonjour
   steps:
@@ -26,42 +21,75 @@ rules:
     - intent: thanks
     - action: utter_thanks
 
-- rule: Confirmer
-  steps:
-    - intent: affirm
-    - action: utter_affirm
-
-- rule: Nier
-  steps:
-    - intent: deny
-    - action: utter_deny
-
-
-# -----------------------------------------
-# 2. Fallback
-# -----------------------------------------
+# -------------------------
+# Fallback
+# -------------------------
 
 - rule: Fallback NLU
   steps:
     - intent: fallback
     - action: utter_fallback
 
+# -------------------------
+# Ressources (direct)
+# -------------------------
 
-# -----------------------------------------
-# 3. Remplir automatiquement le slot "level"
-# -----------------------------------------
-
-- rule: Extraire le niveau (automatique)
+- rule: Demander des ressources
   steps:
-    - intent: inform_level
-    - action: action_set_level
+    - intent: ask_resources
+    - action: action_recommend_resources
 
+# -------------------------
+# Demande niveau (UNE rule par intent)
+# -------------------------
 
-# -----------------------------------------
-# 4. Demander plus de détails
-# -----------------------------------------
-
-- rule: L'utilisateur demande plus de détails
+- rule: Niveau pour définition
   steps:
-    - intent: ask_more_details
-    - action: utter_ask_more_details
+    - intent: ask_definition
+    - action: action_provide_definition
+
+- rule: Niveau pour explication
+  steps:
+    - intent: ask_explanation
+    - action: action_provide_explanation
+
+- rule: Niveau pour exemple
+  steps:
+    - intent: ask_example
+    - action: action_provide_example
+
+- rule: Niveau pour usage
+  steps:
+    - intent: ask_usage
+    - action: action_explain_usage
+
+- rule: Niveau pour installation
+  steps:
+    - intent: ask_installation
+    - action: action_install_tool
+
+- rule: Niveau pour architecture
+  steps:
+    - intent: ask_architecture
+    - action: action_explain_architecture
+
+- rule: Niveau pour analogy
+  steps:
+    - intent: ask_analogy
+    - action: action_provide_analogy
+
+- rule: Niveau pour step_by_step
+  steps:
+    - intent: ask_step_by_step
+    - action: action_provide_step_by_step
+
+- rule: Niveau pour configuration
+  steps:
+    - intent: ask_configuration
+    - action: action_configure_tool
+
+- rule: Niveau pour practices
+  steps:
+    - intent: ask_best_practices
+    - action: action_best_practices
+

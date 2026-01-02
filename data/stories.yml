@@ -2,116 +2,37 @@ version: "3.1"
 
 stories:
 
-# --- Demander une définition ---
-- story: demander une définition d’un concept
-  steps:
-    - intent: ask_definition
-    - action: action_provide_definition
-
-# --- Demander une explication, niveau inconnu ---
-- story: explication sans niveau
-  steps:
-    - intent: ask_explanation
-    - action: utter_ask_level
-    # inform_level sera géré automatiquement par la règle
-    - action: action_provide_explanation
-
-# --- Demande d'explication, niveau connu ---
-- story: explication avec niveau déjà connu
-  steps:
-    - intent: ask_explanation
-    - slot_was_set:
-        - level: "any"
-    - action: action_provide_explanation
-
-# --- Exemple concret ---
-- story: demander un exemple
-  steps:
-    - intent: ask_example
-    - action: action_provide_example
-
-# --- Demander une analogie ---
-- story: demander une analogie
-  steps:
-    - intent: ask_analogy
-    - action: action_provide_analogy
-
-# --- Tutoriel étape par étape ---
-- story: demander step-by-step
-  steps:
-    - intent: ask_step_by_step
-    - action: action_provide_step_by_step
-
-# --- Installation d’un outil ---
-- story: installation d’un outil
-  steps:
-    - intent: ask_installation
-    - action: action_install_tool
-
-# --- Configuration d’un outil ---
-- story: configuration d’un outil
-  steps:
-    - intent: ask_configuration
-    - action: action_configure_tool
-
-# --- Utilisation d’un outil ---
-- story: utilisation d’un outil
-  steps:
-    - intent: ask_usage
-    - action: action_explain_usage
-
-# --- Architecture DevOps ---
-- story: demander architecture DevOps
-  steps:
-    - intent: ask_architecture
-    - action: action_explain_architecture
-
-# --- Bonnes pratiques ---
-- story: demander des bonnes pratiques
-  steps:
-    - intent: ask_best_practices
-    - action: action_best_practices
-
-# --- Ressources d’apprentissage ---
-- story: demander ressources
-  steps:
-    - intent: ask_resources
-    - action: action_recommend_resources
-
-# --- Demande de détails ---
-- story: demande de détails
-  steps:
-    - intent: ask_more_details
-    - action: utter_ask_more_details
-
-# --- Clarification ---
-- story: clarification suite à question complexe
-  steps:
-    - intent: ask_installation
-    - action: utter_ask_more_details
-
-# --- Dialogue de base ---
-- story: salutation
+- story: conversation basique
   steps:
     - intent: greet
     - action: utter_greet
+    - intent: ask_resources
+    - action: action_recommend_resources
 
-- story: remerciement
+- story: conversation definition
   steps:
-    - intent: thanks
-    - action: utter_thanks
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_definition
+    - action: action_provide_definition
 
-- story: au revoir
+- story: conversation example
   steps:
-    - intent: goodbye
-    - action: utter_goodbye
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_example
+    - action: action_provide_example
 
-- story: rejet
+- story: conversation installation
   steps:
-    - intent: deny
-    - action: utter_deny
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_installation
+    - action: action_install_tool
 
-- story: acceptation
+- story: conversation architecture
   steps:
-    - intent: affirm
-    - action: utter_affirm
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_architecture
+    - action: action_explain_architecture

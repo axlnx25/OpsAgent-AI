@@ -24,7 +24,6 @@ class ActionProvideStepByStep(Action):
         # -------------------------
         # 1. Lire les slots
         # -------------------------
-        task = tracker.get_slot("task")
         tool = tracker.get_slot("tool")
         concept = tracker.get_slot("concept")
         level = tracker.get_slot("level") or "debutant"
@@ -34,7 +33,6 @@ class ActionProvideStepByStep(Action):
         level_key = level_map.get(level.lower(), "beginner")
 
         # Normalize names
-        task = task.lower() if task else None
         tool = tool.lower() if tool else None
         concept = concept.lower() if concept else None
 
@@ -47,10 +45,6 @@ class ActionProvideStepByStep(Action):
             steps = TOOLS_DATABASE[tool].get("step_by_step")
         elif concept and concept in CONCEPTS_DATABASE:
             steps = CONCEPTS_DATABASE[concept].get("step_by_step")
-        elif task:
-            # On peut mapper task à un outil
-            if task in TOOLS_DATABASE:
-                steps = TOOLS_DATABASE[task].get("step_by_step")
 
         if not steps:
             dispatcher.utter_message(

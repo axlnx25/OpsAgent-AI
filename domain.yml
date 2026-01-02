@@ -13,15 +13,21 @@ intents:
   - ask_step_by_step
   - ask_installation
   - ask_configuration
-  - ask_pipeline
   - ask_resources
   - ask_best_practices
   - ask_usage
   - ask_architecture
   - inform_level
-  - ask_more_details
   - thanks
   - fallback
+
+entities:
+  - tool
+  - concept
+  - level
+  - langage
+  - version
+
 
 actions:
   - action_set_level
@@ -145,32 +151,6 @@ slots:
     mappings:
       - type: from_entity
         entity: level
-
-  task:
-    type: text
-    influence_conversation: true
-    mappings:
-      - type: from_intent
-        intent: ask_installation
-        value: installation
-      - type: from_intent
-        intent: ask_usage
-        value: usage
-      - type: from_intent
-        intent: ask_configuration
-        value: configuration
-      - type: from_intent
-        intent: ask_definition
-        value: definition
-      - type: from_intent
-        intent: ask_step_by_step
-        value: step_by_step
-      - type: from_intent
-        intent: ask_architecture
-        value: architecture
-      - type: from_intent
-        intent: ask_pipeline
-        value: pipeline
 
   langage:
     type: text

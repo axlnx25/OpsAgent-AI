@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpsAgent Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="chat-header">
+            <div class="logo-area">
+                <div class="avatar-bot">O</div>
+                <div class="bot-info">
+                    <h1>OpsAgent</h1>
+                    <span class="status">En ligne</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="chat-area" id="chat-widget-messages">
+            <!-- Messages will appear here -->
+            <div class="message bot">
+                <div class="message-content">
+                    Bonjour ! Je suis OpsAgent. Comment puis-je vous aider aujourd'hui ?
+                </div>
+            </div>
+        </main>
+
+        <footer class="input-area">
+            <form id="chat-input-form">
+                <input type="text" id="chat-input" placeholder="Écrivez votre message..." autocomplete="off">
+                <button type="submit" id="send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -44,17 +44,6 @@ nlu:
     - je te remercie
     - je suis reconnaissant
     - merci infiniment
-    - merci pour ton aide
-    - merci pour les infos
-    - merci à toi
-    - top merci
-    - trop cool merci
-    - un grand merci
-    - nickel merci
-    - merci mon ami
-    - merci beaucoup vraiment
-    - merci du soutien
-    - c'était très utile merci
 
 - intent: deny
   examples: |
@@ -166,26 +155,6 @@ nlu:
     - configuration initiale de [gitops](concept)
     - comment paramétrer [containers](concept)
 
-
-- intent: ask_pipeline
-  examples: |
-    - Comment intégrer [Jenkins](tool) dans un pipeline CI/CD ?
-    - Peux-tu m’expliquer comment [GitLab CI](tool) s’utilise dans un pipeline DevOps ?
-    - Comment créer une pipeline avec [GitHub Actions](tool) ?
-    - Comment cet outil s’insère dans les différentes étapes du pipeline ?
-    - Quelle est la manière d’utiliser [Docker](tool) dans une pipeline DevOps ?
-    - Comment configurer [Azure DevOps](tool) pour exécuter des étapes de build ?
-    - Comment intégrer cet outil dans un pipeline de livraison continue ?
-    - Quels rôles [Terraform](tool) peut jouer dans un pipeline ?
-    - Comment déclencher des jobs pipeline avec [ArgoCD](tool) ?
-    - Comment automatiser le déploiement avec cet outil dans la pipeline ?
-    - Comment enchaîner les étapes CI/CD à l’aide de [CircleCI](tool) ?
-    - Comment cet outil gère-t-il les phases du pipeline DevOps ?
-    - Peux-tu me montrer comment structurer une pipeline utilisant [Kubernetes](tool) ?
-    - Comment définir un pipeline multi-stages avec cet outil ?
-    - Comment cet outil s’intègre à un système de build existant ?
-    - Comment déclencher automatiquement une pipeline avec [Jenkins](tool) ?
-
 - intent: ask_resources
   examples: |
     - donne-moi des ressources pour apprendre [docker](tool)
@@ -233,26 +202,16 @@ nlu:
 
 - intent: ask_architecture
   examples: |
-    - explique l’architecture [docker_architecture](architecture)
-    - architecture [kubernetes_architecture](architecture)
-    - comment fonctionne l’architecture [gitops_architecture](architecture)
-    - détaille l’architecture [cicd_architecture](architecture)
-    - architecture [microservice_architecture](architecture)
-    - schéma de l’architecture [docker_architecture](architecture)
-    - peux-tu expliquer l’architecture [kubernetes_architecture](architecture)
-    - comment est structurée l’architecture [gitops_architecture](architecture)
-    - description de l’architecture [cicd_architecture](architecture)
-    - explique l’architecture des [microservices](architecture)
-    - explique l'architecture de docker
-    - quelle est l'architecture de docker
-    - comment fonctionne l'architecture de docker
-    - je veux comprendre l'architecture de docker
-    - je souhaite que tu m'expliques l'architecture de docker
-    - peux-tu m'expliquer l'architecture de docker
-    - architecture de docker
-    - docker architecture
-    - détaille l'architecture de docker
-    - parle-moi de l'architecture de docker
+    - explique l’architecture [docker](tool)
+    - architecture [kubernetes](tool)
+    - comment fonctionne l’architecture [gitops](concept)
+    - détaille l’architecture [cicd](concept)
+    - architecture [microservice](concept)
+    - schéma de l’architecture [docker](tool)
+    - peux-tu expliquer l’architecture [kubernetes](tool)
+    - comment est structurée l’architecture [gitops](concept)
+    - description de l’architecture [cicd](concept)
+    - explique l’architecture des [microservices](concept)
 
 - intent: inform_level
   examples: |
@@ -260,7 +219,6 @@ nlu:
     - Mon niveau est [intermédiaire](level)
     - Je suis plutôt [avancé](level) sur ces concepts
     - Je me considère [expert](level) en DevOps
-    - Je débute totalement dans [DevOps](concept)
     - J’ai un niveau [débutant](level)
     - Je suis [intermédiaire](level) avec [Docker](tool) et [Kubernetes](tool)
     - Mon expérience est [avancée](level)
@@ -268,29 +226,6 @@ nlu:
     - Je connais les bases, je suis [débutant](level)
     - Je maîtrise assez, je suis [intermédiaire](level)
     - Je travaille depuis plusieurs années, donc je suis [avancé](level)
-    - J’ai une expérience approfondie, je suis [expert](level)
-    - Je suis encore un [débutant](level) sur [Terraform](tool)
-    - Je suis [intermédiaire](level) en orchestration de [conteneurs](concept)
-    - Mon niveau avec [microservices](concept) est [avancé](level)
-    - Je suis [expert](level) en gestion des pipelines [CI/CD](concept)
-    - Je commence juste, donc je suis [débutant](level)
-    - Je connais un peu, je dirais [intermédiaire](level)
-    - Je maîtrise bien, je suis [avancé](level)
-
-- intent: ask_more_details
-  examples: |
-    - Peux-tu approfondir le concept de [service mesh](concept) ?
-    - J’aimerais plus de précisions sur les [conteneurs](concept)
-    - Peux-tu expliquer davantage l’usage de [Prometheus](tool) ?
-    - Donne-moi plus d’exemples concrets sur [GitOps](concept)
-    - Peux-tu détailler comment déployer avec [Helm](tool) ?
-    - J’aimerais plus d’explications sur [microservices](concept) en [java](langage)
-    - Peux-tu m’en dire plus sur [Docker Compose](tool) ?
-    - Donne plus de détails sur la gestion des secrets avec [Vault](tool)
-    - Peux-tu expliquer davantage le pipeline [CI/CD](concept) ?
-    - J’aimerais plus de précisions sur [Grafana](tool)
-    - Peux-tu approfondir l’utilisation de [Python](langage) pour [Kubernetes](tool) ?
-    - Donne-moi plus de détails sur les bonnes pratiques avec [GitLab CI](tool)
 
 - intent: ask_example
   examples: |
@@ -304,44 +239,6 @@ nlu:
     - donne un exemple d’architecture en [microservices](concept)
     - montre-moi un exemple pratique de [GitOps](concept)
     - peux-tu donner un exemple d’utilisation de [Ansible](tool) ?
-
-- intent: inform_tool
-  examples: |
-    - [Docker](tool)
-    - C'est pour [Git](tool)
-    - Je parle de [Kubernetes](tool)
-    - Il s'agit de [Docker](tool)
-    - On travaille sur [Ansible](tool)
-    - C'est [GitLab CI](tool)
-    - Je voudrais en savoir plus sur [Kubernetes](tool)
-    - L'outil est [Terraform](tool)
-    - [Jenkins](tool)
-
-- intent: inform_concept
-  examples: |
-    - Je veux en savoir plus sur le [CI/CD](concept)
-    - Parle-moi du [GitOps](concept)
-    - C'est quoi l' [Infrastructure as Code](concept) ?
-    - Je m'intéresse à l' [Infrastructure as code](concept) pour mon projet
-    - Peux-tu m'expliquer l' [observability](concept) ?
-    - On va parler des [containers](concept)
-    - Je ne comprends pas bien les [microservices](concept)
-    - Explique-moi le concept de [micro-services](concept)
-    - Je parle de la [CI CD](concept)
-    - Le sujet est l' [observabilité](concept) des systèmes
-
-- intent: inform_architecture
-  examples: |
-    - Explique-moi l' [architecture Docker](architecture)
-    - Comment fonctionne l' [architecture de Kubernetes](architecture) ?
-    - Je voudrais des détails sur le [schéma microservices](architecture)
-    - Peux-tu me décrire une [architecture CI/CD](architecture) type ?
-    - C'est quoi exactement le fonctionnement de l' [architecture GitOps](architecture) ?
-    - Montre-moi le diagramme pour les [micro-services](architecture)
-    - Je veux comprendre l' [architecture k8s](architecture)
-    - Parle-moi du design de l' [architecture des conteneurs](architecture)
-    - Quelle est la structure d'une [pipeline CI CD](architecture) ?
-    - Comment s'articule une [architecture basée sur GitOps](architecture) ?
     
 
 - lookup: tool

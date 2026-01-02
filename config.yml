@@ -13,15 +13,29 @@ language: fr
 pipeline:
   - name: SpacyNLP
     model: "fr_core_news_md"
+
   - name: SpacyTokenizer
+
   - name: SpacyFeaturizer
+
   - name: RegexFeaturizer
+
   - name: LexicalSyntacticFeaturizer
+
   - name: CountVectorsFeaturizer
+    analyzer: "word"
+    min_ngram: 1
+    max_ngram: 2
+
   - name: CountVectorsFeaturizer
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
+
+  - name: DIETClassifier
+    epochs: 100
+    constrain_similarities: true
+
 
 
 
@@ -42,4 +56,3 @@ policies:
     epochs: 100
     constrain_similarities: true
     model_confidence: "softmax"
-

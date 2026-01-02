@@ -1,0 +1,14 @@
+[
+  {
+    "name": "tool",
+    "pattern": "(\\bGit\\b|\\bGitHub\\b|\\bGitLab\\b|\\bBitbucket\\b|\\bAzure\\ DevOps\\ Repos\\b|\\bJenkins\\b|\\bGitHub\\ Actions\\b|\\bGitHub\\ Actions\\b|\\bGitLab\\ CI\\b|\\bCircleCI\\b|\\bTravis\\ CI\\b|\\bBamboo\\b|\\bAzure\\ Pipelines\\b|\\bTeamCity\\b|\\bIntégration\\ Continue\\b|\\bDéploiement\\ Continu\\b|\\bDocker\\b|\\bPodman\\b|\\bBuildah\\b|\\bKaniko\\b|\\bHarbor\\b|\\bDocker\\ Compose\\b|\\bKubernetes\\b|\\bOpenShift\\b|\\bAmazon\\ EKS\\b|\\bGoogle\\ GKE\\b|\\bAzure\\ AKS\\b|\\bNomad\\b|\\bTerraform\\b|\\bAnsible\\b|\\bChef\\b|\\bPuppet\\b|\\bSaltStack\\b|\\bPulumi\\b|\\bCloudFormation\\b|\\bPrometheus\\b|\\bGrafana\\b|\\bELK\\ Stack\\b|\\bElasticsearch\\b|\\bLogstash\\b|\\bKibana\\b|\\bLoki\\b|\\bDatadog\\b|\\bNew\\ Relic\\b|\\bZabbix\\b|\\bNagios\\b|\\bcontainerd\\b|\\bCRI\\-O\\b|\\bIstio\\b|\\bLinkerd\\b|\\bTraefik\\b|\\bSonarQube\\b|\\bSnyk\\b|\\bTrivy\\b|\\bVault\\b|\\bFalco\\b)"
+  },
+  {
+    "name": "concept",
+    "pattern": "(\\bDevOps\\b|\\bCulture\\ CI/CD\\b|\\bShift\\ Left\\b|\\bFeedback\\ loop\\b|\\bCollaboration\\ Dev–Ops\\b|\\bValeur\\ métier\\ continue\\b|\\bCulture\\ d'amélioration\\ continue\\b|\\bPipeline\\ CI/CD\\b|\\bBuild\\ automation\\b|\\bTest\\ automation\\b|\\bDeployment\\ automation\\b|\\bDelivery\\ pipeline\\b|\\bRelease\\ management\\b|\\bConteneurisation\\b|\\bMicroservices\\b|\\bOrchestration\\b|\\bCloud\\ Native\\b|\\bService\\ Mesh\\b|\\bDéploiement\\ Blue\\-Green\\b|\\bDéploiement\\ Canary\\b|\\bInfrastructure\\ as\\ Code\\ \\(IaC\\)\\b|\\bImmutable\\ Infrastructure\\b|\\bProvisioning\\b|\\bConfiguration\\ Management\\b|\\bGitOps\\b|\\bEverything\\-as\\-Code\\b|\\bDevSecOps\\b|\\bSecurity\\ scanning\\b|\\bCompliance\\ automation\\b|\\bSecret\\ management\\b|\\bPolicy\\ as\\ Code\\b|\\bMonitoring\\b|\\bLogging\\b|\\bAlerting\\b|\\bTracing\\b|\\bSLO\\b|\\bService\\ Level\\ Objective\\b|\\bSLA\\b|\\bSLI\\b|\\bService\\ Level\\ Indicator\\b|\\bScalabilité\\ horizontale\\b|\\bScalabilité\\ verticale\\b|\\bHaute\\ disponibilité\\b|\\bRésilience\\b|\\bTollérance\\ aux\\ pannes\\b|\\bLoad\\ balancing\\b|\\bAgile\\b|\\bScrum\\b|\\bKanban\\b|\\bLean\\b|\\bContinuous\\ Learning\\b|\\bPost\\-mortem\\b|\\bRCA\\b|\\bRoot\\ Cause\\ Analysis\\b)"
+  },
+  {
+    "name": "language",
+    "pattern": "(\\bpython\\b|\\bjava\\b)"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "rule_only_slots": [
+    "tool"
+  ],
+  "rule_only_loops": []
+}

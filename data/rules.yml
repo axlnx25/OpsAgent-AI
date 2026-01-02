@@ -53,10 +53,10 @@ rules:
     - intent: ask_explanation
     - action: action_provide_explanation
 
-#- rule: Niveau pour exemple
-#  steps:
-#    - intent: ask_example
-#    - action: action_provide_example
+- rule: Niveau pour exemple
+  steps:
+    - intent: ask_example
+    - action: action_provide_example
 
 - rule: Niveau pour usage
   steps:
@@ -73,24 +73,23 @@ rules:
     - intent: ask_architecture
     - action: action_explain_architecture
 
-# -------------------------
-# Reprise après niveau (CRITIQUE)
-# -------------------------
+- rule: Niveau pour analogy
+  steps:
+    - intent: ask_analogy
+    - action: action_provide_analogy
 
-#- rule: Reprise après niveau
-#  condition:
-#    - slot_was_set:
-#        - pending_intent
-#  steps:
-#    - intent: inform_level
-#    - action: action_set_level
-#    - action: action_resume_pending
+- rule: Niveau pour step_by_step
+  steps:
+    - intent: ask_step_by_step
+    - action: action_provide_step_by_step
 
-#- rule: Reprise après niveau (affirm)
-#  condition:
-#    - slot_was_set:
-#        - pending_intent
-#  steps:
-#    - intent: affirm
-#    - action: action_set_level
-#    - action: action_resume_pending
+- rule: Niveau pour configuration
+  steps:
+    - intent: ask_configuration
+    - action: action_configure_tool
+
+- rule: Niveau pour practices
+  steps:
+    - intent: ask_best_practices
+    - action: action_best_practices
+
